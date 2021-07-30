@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 import { IndexModelState, ConnectProps, connect } from 'alita';
-import { Button } from 'antd-mobile';
+import { Page } from '@alita/react';
+import { Card, List, Image } from 'antd-mobile';
 import styles from './index.less';
+import logo from '@/assets/logo.png';
 
 interface PageProps extends ConnectProps {
   index: IndexModelState;
@@ -9,9 +11,23 @@ interface PageProps extends ConnectProps {
 const IndexPage: FC<PageProps> = () => {
   return (
     <div className={styles.center}>
-      <Button size="large" color="primary" type="reset">
-        按钮
-      </Button>
+      <div style={{ padding: '0.2rem' }}>
+        <Card
+          title={
+            <List>
+              <List.Item
+                prefix={<Image src={logo} width={80} />}
+                title="这里是标题"
+                description="这里是描述信息"
+              >
+                这里是主信息
+              </List.Item>
+            </List>
+          }
+        >
+          卡片内容
+        </Card>
+      </div>
     </div>
   );
 };

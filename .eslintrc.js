@@ -5,6 +5,7 @@ module.exports = {
     'jsx-a11y/alt-text': 0,
     'no-unused-expressions': 0,
     'no-console': 0,
+    'selector-type-no-unknown': 0,
   },
   globals: {},
 };
