@@ -13,8 +13,12 @@ const menuData: MenuItem[] = [
     path: '/',
     title: '二维码地址',
   },
+  {
+    path: '/authtest',
+    title: '登录',
+  },
 ];
-const SideMenu: FC<{ location: any }> = (props) => {
+const SideMenu: FC<{ location: any; setOpen: (open: boolean) => void }> = (props) => {
   return (
     <Page className={styles.sideMenu}>
       <Header className={styles.yhHeader}>
@@ -22,11 +26,14 @@ const SideMenu: FC<{ location: any }> = (props) => {
       </Header>
       <Content>
         {menuData.map((menu) => (
-          <div className={styles.item}>
+          <div className={styles.item} key={menu.path}>
             <a
               className={styles.content}
               onClick={() => {
-                history.push(menu.path);
+                if (props?.location?.pathname !== menu.path) {
+                  history.push(menu.path);
+                }
+                props.setOpen && props.setOpen(false);
               }}
               style={{ fontWeight: props?.location?.pathname === menu.path ? 500 : 0 }}
             >
@@ -79,7 +86,7 @@ const Layout: FC<{ location: any }> = (props) => {
     <div className={styles.content}>
       <Page>
         <SideMenuContent {...props} open={open} setOpen={setOpen} />
-        <SideMenu {...props} />
+        <SideMenu setOpen={setOpen} {...props} />
       </Page>
     </div>
   );

@@ -12,21 +12,7 @@ const IndexPage: FC<PageProps> = () => {
   return (
     <div className={styles.center}>
       <div style={{ padding: '0.2rem' }}>
-        <Card
-          title={
-            <List>
-              <List.Item
-                prefix={<Image src={logo} width={80} />}
-                title="这里是标题"
-                description="这里是描述信息"
-              >
-                这里是主信息
-              </List.Item>
-            </List>
-          }
-        >
-          卡片内容
-        </Card>
+        <Card title={<div>123</div>}>卡片内容</Card>
       </div>
     </div>
   );

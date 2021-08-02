@@ -1,4 +1,5 @@
-import { Effect, Reducer } from 'alita';
+import { Effect } from 'alita';
+import { Reducer } from 'redux';
 import { query } from '@/services/api';
 
 export interface IndexModelState {
