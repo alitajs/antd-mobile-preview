@@ -17,6 +17,10 @@ const menuData: MenuItem[] = [
     path: '/authtest',
     title: '登录',
   },
+  {
+    path: '/form',
+    title: '表单元素',
+  },
 ];
 const SideMenu: FC<{ location: any; setOpen: (open: boolean) => void }> = (props) => {
   return (
