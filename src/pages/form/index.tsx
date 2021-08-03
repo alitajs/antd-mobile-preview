@@ -16,7 +16,6 @@ import {
   Search,
   Rate,
 } from 'antd-mobile';
-import styles from './index.less';
 
 interface FormPageProps {}
 
@@ -89,7 +88,7 @@ const FormPage: FC<FormPageProps> = () => {
     });
   };
   return (
-    <Page className={styles.center}>
+    <Page>
       <Content>
         <Form
           form={form}

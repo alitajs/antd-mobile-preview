@@ -21,6 +21,10 @@ const menuData: MenuItem[] = [
     path: '/form',
     title: '表单元素',
   },
+  {
+    path: '/listrefresh',
+    title: '无限滚动和下拉刷新',
+  },
 ];
 const SideMenu: FC<{ location: any; setOpen: (open: boolean) => void }> = (props) => {
   return (
@@ -39,7 +43,7 @@ const SideMenu: FC<{ location: any; setOpen: (open: boolean) => void }> = (props
                 }
                 props.setOpen && props.setOpen(false);
               }}
-              style={{ fontWeight: props?.location?.pathname === menu.path ? 500 : 0 }}
+              style={{ fontWeight: props?.location?.pathname === menu.path ? 500 : 300 }}
             >
               {menu.title}
             </a>
